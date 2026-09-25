@@ -1657,7 +1657,7 @@ fun NowPlayingScreen(
         // The tablet has no mirrored main-player treatment to crossfade from.
         val fullArtworkBackdropAlpha by animateFloatAsState(
             targetValue = if (
-                (tabletArtworkBackdrop || lyricsOpen || queueOpen) &&
+(tabletArtworkBackdrop || (!legacyMesh && (lyricsOpen || queueOpen))) &&             
                 (tabletArtworkBackdrop || fullArtworkBlurImage != null)
             ) 1f else 0f,
             animationSpec = tween(durationMillis = 360, easing = FastOutSlowInEasing),
