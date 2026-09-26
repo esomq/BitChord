@@ -266,7 +266,7 @@ fun CanvasArtworkPlayer(
     // regardless of playback state, so coming back from background always has
     // a surface ready and `onRenderedFirstFrame()` fires naturally.
     val foreground = rememberIsForeground()
-    LaunchedEffect(foreground, pausedForTransition) {
+    LaunchedEffect(foreground, isPlaying, pausedForTransition) {
         player.playWhenReady = foreground && isPlaying && !pausedForTransition
     }
 
