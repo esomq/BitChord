@@ -267,7 +267,7 @@ fun CanvasArtworkPlayer(
     // a surface ready and `onRenderedFirstFrame()` fires naturally.
     val foreground = rememberIsForeground()
     LaunchedEffect(foreground, pausedForTransition) {
-        player.playWhenReady = foreground && !pausedForTransition
+        player.playWhenReady = foreground && isPlaying && !pausedForTransition
     }
 
     // Repaint onto a surface that has just been handed back. A TextureView's
